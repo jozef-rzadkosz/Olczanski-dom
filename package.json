@@ -1,0 +1,24 @@
+{
+  "name": "olczanski-dom",
+  "version": "1.0.0",
+  "description": "Website of the company dealing with renting rooms",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freestyle09/Olczanski-dom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freestyle09/Olczanski-dom/issues"
+  },
+  "homepage": "https://github.com/freestyle09/Olczanski-dom#readme",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4"
+  }
+}
