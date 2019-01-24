@@ -1,0 +1,8 @@
+@import './variables';
+
+#header {
+  color: $color;
+  height: 500px;
+  background-color: grey;
+  display: flex;
+}

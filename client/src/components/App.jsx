@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 
+//components
+import Header from './Header';
+
 class App extends Component {
   state = {};
   render() {
-    return <div>App works! :)</div>;
+    return (
+      <div>
+        <Header />
+      </div>
+    );
   }
 }
 
