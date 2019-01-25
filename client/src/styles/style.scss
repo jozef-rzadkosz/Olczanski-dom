@@ -6,3 +6,17 @@
 
 @import './variables';
 @import './header';
+@import './home';
+
+h2 {
+  font: {
+    size: 28px;
+    weight: bold;
+    family: $font-Raleway;
+  }
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+  padding: 50px;
+}

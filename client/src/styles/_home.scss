@@ -1,0 +1,11 @@
+@import './variables';
+
+#home {
+  color: $font-color;
+  font: {
+    size: 18px;
+    family: $font-Open;
+  }
+  text-align: center;
+  padding-bottom: 50px;
+}

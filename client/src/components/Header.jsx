@@ -13,10 +13,13 @@ class Header extends Component {
 
           <ul className='menu'>
             <li>
-              <a>Strona główna</a>
+              <a className='active'>Strona główna</a>
             </li>
             <li>
               <a>O nas</a>
+            </li>
+            <li>
+              <a>Na żywo</a>
             </li>
             <li>
               <a>Galeria</a>
