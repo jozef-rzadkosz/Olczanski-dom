@@ -7,8 +7,10 @@
 @import './variables';
 @import './header';
 @import './home';
+@import './about-us';
 
 h2 {
+  color: $header-color;
   font: {
     size: 28px;
     weight: bold;
@@ -19,4 +21,18 @@ h2 {
     transform: uppercase;
   }
   padding: 50px;
+  margin: 0;
+}
+
+h3 {
+  font: {
+    size: 18px;
+    // weight: bold;
+    family: $font-Raleway;
+  }
+  text: {
+    align: center;
+    // transform: uppercase;
+  }
+  padding-bottom: 50px;
 }
