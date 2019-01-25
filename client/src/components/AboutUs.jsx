@@ -26,7 +26,7 @@ class AboutUs extends Component {
           <div>
             <div>
               <AboutUsItem class='fas fa-home'>
-                Wspaniała rodzinna atmosfera oraz tanie noclegi, u nas poczujesz się jak w domu!
+                Wspaniała rodzinna atmosfera oraz tanie noclegi, <br /> u nas poczujesz się jak w domu!
               </AboutUsItem>
               <AboutUsItem class='fa fa-parking'>Bezpłatny parking</AboutUsItem>
               <AboutUsItem class='fas fa-bus-alt'>

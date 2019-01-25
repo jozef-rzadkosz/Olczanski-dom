@@ -1,7 +1,34 @@
 import React, { Component } from 'react';
 
 class Header extends Component {
-  state = {};
+  goto = selector => {
+    if (window.location.pathname !== '/') {
+      this.constructor.changeUrl();
+    }
+    let checkExist = setInterval(() => {
+      let element = document.getElementById(selector);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        clearInterval(checkExist);
+      }
+    }, 100);
+  };
+
+  gotoHome = () => {
+    this.goto('home');
+  };
+
+  gotoAboutUs = () => {
+    this.goto('about-us');
+  };
+
+  gotoLive = () => {
+    this.goto('live');
+  };
+
   render() {
     return (
       <section id='header'>
@@ -13,13 +40,13 @@ class Header extends Component {
 
           <ul className='menu'>
             <li>
-              <a className='active'>Strona główna</a>
+              <a onClick={this.gotoHome}>Strona główna</a>
             </li>
             <li>
-              <a>O nas</a>
+              <a onClick={this.gotoAboutUs}>O nas</a>
             </li>
             <li>
-              <a>Na żywo</a>
+              <a onClick={this.gotoLive}>Na żywo</a>
             </li>
             <li>
               <a>Galeria</a>

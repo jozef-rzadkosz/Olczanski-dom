@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Home from './Home';
 import AboutUs from './AboutUs';
+import Live from './Live';
 
 class App extends Component {
   state = {};
@@ -13,6 +14,7 @@ class App extends Component {
         <Header />
         <Home />
         <AboutUs />
+        <Live />
       </div>
     );
   }
