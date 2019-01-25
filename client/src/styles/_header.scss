@@ -11,14 +11,48 @@
     width: 100%;
     background-image: url('~/images/17.jpg');
     background-size: cover;
+    filter: brightness(50%);
+    -webkit-filter: brightness(50%);
   }
   .container {
     position: relative;
+
     height: 100%;
     z-index: 1080;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-bottom: 50px;
+    .menu {
+      display: flex;
+      width: 50%;
+      list-style: none;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      > li {
+        color: $color-white;
+        padding: 40px 0;
+        text: {
+          align: center;
+          transform: uppercase;
+        }
+        a {
+          cursor: pointer;
+          padding: 20px 10px;
+          transition: 0.3s;
+          font: {
+            size: 16px;
+            weight: bold;
+            family: $font-Lato;
+          }
+          &:hover {
+            color: $main-color;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
   }
 }

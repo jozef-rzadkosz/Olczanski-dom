@@ -7,9 +7,28 @@ class Header extends Component {
       <section id='header'>
         <div className='background-image' />
         <div className='container'>
-          <div>Logo</div>
-          <div>Menu</div>
-          <div>Parzenica</div>
+          <div>
+            <img src='Logo.png' alt='Olczański Dom' />
+          </div>
+
+          <ul className='menu'>
+            <li>
+              <a>Strona główna</a>
+            </li>
+            <li>
+              <a>O nas</a>
+            </li>
+            <li>
+              <a>Galeria</a>
+            </li>
+            <li>
+              <a>Kontakt</a>
+            </li>
+          </ul>
+
+          <div>
+            <img src='parzenica.png' alt='parzenica' />
+          </div>
         </div>
       </section>
     );
