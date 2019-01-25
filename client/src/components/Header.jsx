@@ -5,7 +5,12 @@ class Header extends Component {
   render() {
     return (
       <section id='header'>
-        <div className='container'>Header</div>
+        <div className='background-image' />
+        <div className='container'>
+          <div>Logo</div>
+          <div>Menu</div>
+          <div>Parzenica</div>
+        </div>
       </section>
     );
   }
