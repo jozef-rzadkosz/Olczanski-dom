@@ -21,6 +21,7 @@
   "homepage": "https://github.com/freestyle09/Olczanski-dom#readme",
   "dependencies": {
     "concurrently": "^4.1.0",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "request": "^2.88.0"
   }
 }
