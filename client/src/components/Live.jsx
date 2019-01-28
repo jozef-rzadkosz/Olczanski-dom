@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 
 class Live extends Component {
   state = {
-    data: Array,
-    main: Array,
-    temp: 0
+    data: null,
+    sunrise: 0
   };
+
+  sunrise;
 
   render() {
     return (
       <section id='live'>
         <div className='container'>
           <h2>Podgląd na Żywo</h2>
-          <div>
+          <div className='live'>
             <div>
               <h3>Kasprowy Wierch</h3>
               <iframe src='https://imageserver.webcamera.pl/umiesc/kasprowy-wierch' border='0' scrolling='no' />
@@ -24,20 +25,45 @@ class Live extends Component {
           </div>
 
           <h2>Pogoda</h2>
-          <div>{this.state.data.name}</div>
-          <div>{this.state.temp - 274.15}</div>
+          {this.state.data && (
+            <div className='weather'>
+              <div>
+                <div>
+                  <h3>{this.state.data.name}, Polska</h3>
+                  <h3>{this.state.data.main.temp - 274.15}&#176; C</h3>
+                </div>
+
+                <div>
+                  <img src={`http://openweathermap.org/img/w/${this.state.data.weather[0].icon}.png`} alt='' />
+                </div>
+                <div>{this.state.data.weather[0].description}</div>
+              </div>
+              <div>
+                <div>Wilgotność powietrza: {this.state.data.main.humidity}%</div>
+                <div>Ciśnienie atmosferyczne: {this.state.data.main.pressure} hPa</div>
+              </div>
+
+              <div>
+                <div>Wschód słońca: {this.state.sunrise}</div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     );
   }
 
-  componentDidMount() {
-    fetch('/weather')
+  async componentDidMount() {
+    await fetch('/weather')
       .then(resp => resp.json())
       .then(data => {
         console.log(data);
-        this.setState({ data, main: data.main, temp: data.main.temp });
+        this.setState({ data });
       });
+    // this.setState({
+    //   sunrise: new Date(this.state.data.sys.sunrise * 1000)
+    // });
+    // console.log(this.state.sunrise);
   }
 }
 

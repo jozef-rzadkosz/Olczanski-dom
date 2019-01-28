@@ -5,7 +5,7 @@ const keys = require('./config/keys');
 
 const apiKey = keys.api;
 let city = keys.city;
-let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pl&appid=${apiKey}`;
 
 app.use(express.json());
 
