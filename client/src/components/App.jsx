@@ -5,6 +5,7 @@ import Header from './Header';
 import Home from './Home';
 import AboutUs from './AboutUs';
 import Live from './Live';
+import Gallery from './Gallery';
 
 class App extends Component {
   state = {};
@@ -15,6 +16,7 @@ class App extends Component {
         <Home />
         <AboutUs />
         <Live />
+        <Gallery />
       </div>
     );
   }
