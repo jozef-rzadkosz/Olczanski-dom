@@ -41,10 +41,8 @@ class Live extends Component {
               <div>
                 <div>Wilgotność powietrza: {this.state.data.main.humidity}%</div>
                 <div>Ciśnienie atmosferyczne: {this.state.data.main.pressure} hPa</div>
-              </div>
-
-              <div>
-                <div>Wschód słońca: {this.state.sunrise}</div>
+                <div>Zachmurzenie: {this.state.data.clouds.all}%</div>
+                <div>Widoczność: {this.state.data.visibility}m</div>
               </div>
             </div>
           )}
