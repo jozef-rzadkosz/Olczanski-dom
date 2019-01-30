@@ -204,9 +204,6 @@ export default class ContactForm extends React.Component {
       document.getElementById('message').classList.add('input-bottom-validate');
     } else if (this.state.errors.length > 0) {
     } else {
-      this.setState({
-        isLoading: true
-      });
       // Make an object and send it
       const obj = {
         from: this.state.from,
@@ -216,6 +213,9 @@ export default class ContactForm extends React.Component {
         phone: this.state.phone,
         message: this.state.message
       };
+      this.setState({
+        isLoading: true
+      });
       fetch('/contact', {
         method: 'POST',
         headers: {
@@ -227,6 +227,9 @@ export default class ContactForm extends React.Component {
         .then(resp => resp.json())
         .then(() => {
           // Alert after submiting the form
+          this.setState({
+            isLoading: false
+          });
           Swal.fire({
             title: 'Sukces!',
             text: 'Wiadomość e-mail została wysłana prawidłowo',
@@ -235,6 +238,9 @@ export default class ContactForm extends React.Component {
           });
         })
         .catch(() => {
+          this.setState({
+            isLoading: false
+          });
           Swal.fire({
             title: 'Ups...',
             text: 'Wiadomość e-mail nie została wysłana prawidłowo',
@@ -253,14 +259,10 @@ export default class ContactForm extends React.Component {
         surname: (this.state.surname = ''),
         email: (this.state.email = ''),
         phone: (this.state.phone = ''),
-        message: (this.state.message = '')
+        message: (this.state.message = ''),
+        errors: this.errors
       });
     }
-
-    this.setState({
-      errors: this.errors,
-      isLoading: false
-    });
   };
 
   render() {
@@ -327,7 +329,7 @@ export default class ContactForm extends React.Component {
               {this.state.isLoading && (
                 <div className='loading'>
                   <div>
-                    <img src='Spinner-1s-200px.svg' alt='' />
+                    <img src='Spinner-1s-200px-white.svg' alt='' />
                     <div>Wysyłanie wiadomości...</div>
                   </div>
                 </div>

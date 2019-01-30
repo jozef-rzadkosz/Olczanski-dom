@@ -7,9 +7,9 @@ class Footer extends Component {
     return (
       <footer>
         <div>
-          Copyright &copy; {this.date.getFullYear()}{' '}
+          Copyright &copy; {this.date.getFullYear()} |{' '}
           <a href='https://github.com/freestyle09' target='_blank'>
-            | Józef Rzadkosz{' '}
+            Józef Rzadkosz{' '}
           </a>
         </div>
         <div>
