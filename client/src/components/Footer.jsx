@@ -6,11 +6,14 @@ class Footer extends Component {
   render() {
     return (
       <footer>
-        Copyright &copy;{' '}
-        <a href='https://github.com/freestyle09' target='_blank'>
-          Józef Rzadkosz
-        </a>
-        {this.date.getFullYear()}
+        <div>
+          Copyright &copy;{' '}
+          <a href='https://github.com/freestyle09' target='_blank'>
+            Józef Rzadkosz{' '}
+          </a>
+          {this.date.getFullYear()}
+        </div>
+        <div>Booking</div>
       </footer>
     );
   }
