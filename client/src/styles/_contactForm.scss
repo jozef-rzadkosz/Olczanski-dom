@@ -1,69 +1,68 @@
 @import './variables';
 
 #contact-form {
-  width: 50%;
+  width: 49%;
   // padding-bottom: 50px;
-  .container {
-    font: {
-      family: $font-Open;
-      weight: bold;
-    }
-    .error {
-      display: flex;
-      flex-direction: column;
-      color: red;
-    }
-    .form {
-      .form-control {
-        // border: 2px solid red;
-        background-color: $main-color-rgba;
-        color: $color-white;
-        border: none;
-        border-radius: 0;
-      }
-      textarea {
-        resize: vertical;
-        max-height: 300px;
-        min-height: 200px;
-      }
-      ::-webkit-input-placeholder {
-        color: $color-white;
-      }
-      .input-bottom-validate {
-        border: none;
-        border-bottom: 3px solid red;
-      }
+  font: {
+    family: $font-Open;
+    weight: bold;
+  }
 
-      button {
-        background-color: $main-color-rgba;
-        border: none;
-        padding: 10px 20px;
-        outline: transparent;
-        width: 100%;
+  .error {
+    display: flex;
+    flex-direction: column;
+    color: red;
+  }
+  .form {
+    .form-control {
+      // border: 2px solid red;
+      background-color: $main-color-rgba;
+      color: $color-white;
+      border: none;
+      border-radius: 0;
+    }
+    textarea {
+      resize: vertical;
+      max-height: 300px;
+      min-height: 200px;
+    }
+    ::-webkit-input-placeholder {
+      color: $color-white;
+    }
+    .input-bottom-validate {
+      border: none;
+      border-bottom: 3px solid red;
+    }
+
+    button {
+      background-color: $main-color-rgba;
+      border: none;
+      padding: 10px 20px;
+      outline: transparent;
+      width: 100%;
+    }
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 100%;
+      width: 100%;
+      color: $color-white;
+      > div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
-      .loading {
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        height: 100%;
-        width: 100%;
-        color: $color-white;
-        > div {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-      }
     }
-    .form-control:focus,
-    button:focus {
-      -webkit-box-shadow: 0px 0px 5px $main-color;
-      box-shadow: 0px 0px 5px $main-color;
-    }
-    button:focus {
-      background-color: $main-color;
-    }
+  }
+  .form-control:focus,
+  button:focus {
+    -webkit-box-shadow: 0px 0px 5px $main-color;
+    box-shadow: 0px 0px 5px $main-color;
+  }
+  button:focus {
+    background-color: $main-color;
   }
 }

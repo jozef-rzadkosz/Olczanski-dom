@@ -266,77 +266,75 @@ export default class ContactForm extends React.Component {
   render() {
     return (
       <div id='contact-form' className='contact-form'>
-        <div className='container'>
-          <div className='error'>
-            {this.state.errors.map((el, index) => (
-              <div key={index}>{el}</div>
-            ))}
-          </div>
-          <form className='form' onSubmit={this.sendForm}>
-            <input id='type' type='hidden' value={this.props.from} />
-            <div>
-              <div className='form-group'>
-                <input
-                  placeholder='Imię'
-                  onChange={this.handleFirstName}
-                  id='firstName'
-                  type='text'
-                  className={'form-control ' + this.props.active}
-                />
-              </div>
-              <div className='form-group'>
-                <input
-                  placeholder='Nazwisko'
-                  onChange={this.handleSurname}
-                  id='surname'
-                  type='text'
-                  className={'form-control ' + this.props.active}
-                />
-              </div>
-              <div className='form-group'>
-                <input
-                  placeholder='E-mail'
-                  onChange={this.handleEmail}
-                  id='email'
-                  type='email'
-                  className={'form-control ' + this.props.active}
-                />
-              </div>
-              <div className='form-group'>
-                <input
-                  placeholder='Telefon'
-                  onChange={this.handlePhone}
-                  id='phone'
-                  type='number'
-                  className={'form-control ' + this.props.active}
-                />
-              </div>
-
-              <div className='form-group'>
-                <textarea
-                  placeholder='Treść wiadomości'
-                  id='message'
-                  onChange={this.handleMessage}
-                  className={'form-control ' + this.props.active}
-                />
-              </div>
-
-              <div>
-                <button className={this.props.btn + ' btn btn-primary'} type='submit' name='action'>
-                  Wyślij
-                </button>
-                {this.state.isLoading && (
-                  <div className='loading'>
-                    <div>
-                      <img src='Spinner-1s-200px.svg' alt='' />
-                      <div>Wysyłanie wiadomości...</div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </form>
+        <div className='error'>
+          {this.state.errors.map((el, index) => (
+            <div key={index}>{el}</div>
+          ))}
         </div>
+        <form className='form' onSubmit={this.sendForm}>
+          <input id='type' type='hidden' value={this.props.from} />
+          <div>
+            <div className='form-group'>
+              <input
+                placeholder='Imię'
+                onChange={this.handleFirstName}
+                id='firstName'
+                type='text'
+                className={'form-control ' + this.props.active}
+              />
+            </div>
+            <div className='form-group'>
+              <input
+                placeholder='Nazwisko'
+                onChange={this.handleSurname}
+                id='surname'
+                type='text'
+                className={'form-control ' + this.props.active}
+              />
+            </div>
+            <div className='form-group'>
+              <input
+                placeholder='E-mail'
+                onChange={this.handleEmail}
+                id='email'
+                type='email'
+                className={'form-control ' + this.props.active}
+              />
+            </div>
+            <div className='form-group'>
+              <input
+                placeholder='Telefon'
+                onChange={this.handlePhone}
+                id='phone'
+                type='number'
+                className={'form-control ' + this.props.active}
+              />
+            </div>
+
+            <div className='form-group'>
+              <textarea
+                placeholder='Treść wiadomości'
+                id='message'
+                onChange={this.handleMessage}
+                className={'form-control ' + this.props.active}
+              />
+            </div>
+
+            <div>
+              <button className={this.props.btn + ' btn btn-primary'} type='submit' name='action'>
+                Wyślij
+              </button>
+              {this.state.isLoading && (
+                <div className='loading'>
+                  <div>
+                    <img src='Spinner-1s-200px.svg' alt='' />
+                    <div>Wysyłanie wiadomości...</div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </form>
       </div>
     );
   }
