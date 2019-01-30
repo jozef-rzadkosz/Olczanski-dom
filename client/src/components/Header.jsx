@@ -29,6 +29,13 @@ class Header extends Component {
     this.goto('live');
   };
 
+  gotoGallery = () => {
+    this.goto('gallery');
+  };
+  gotoContact = () => {
+    this.goto('contact');
+  };
+
   render() {
     return (
       <section id='header'>
@@ -49,10 +56,10 @@ class Header extends Component {
               <a onClick={this.gotoLive}>Na żywo</a>
             </li>
             <li>
-              <a>Galeria</a>
+              <a onClick={this.gotoGallery}>Galeria</a>
             </li>
             <li>
-              <a>Kontakt</a>
+              <a onClick={this.gotoContact}>Kontakt</a>
             </li>
           </ul>
 
