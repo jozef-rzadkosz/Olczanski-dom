@@ -55,13 +55,8 @@ class Live extends Component {
     await fetch('/weather')
       .then(resp => resp.json())
       .then(data => {
-        console.log(data);
         this.setState({ data });
       });
-    // this.setState({
-    //   sunrise: new Date(this.state.data.sys.sunrise * 1000)
-    // });
-    // console.log(this.state.sunrise);
   }
 }
 

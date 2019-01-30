@@ -1,14 +1,16 @@
 @import './variables';
 
 #contact-form {
+  width: 50%;
   padding-bottom: 50px;
   .container {
-    width: 60%;
     font: {
       family: $font-Open;
       weight: bold;
     }
     .error {
+      display: flex;
+      flex-direction: column;
       color: red;
     }
     .form {
@@ -37,6 +39,7 @@
         border: none;
         padding: 10px 20px;
         outline: transparent;
+        width: 100%;
       }
       .loading {
         position: fixed;

@@ -7,7 +7,6 @@ import AboutUs from './AboutUs';
 import Live from './Live';
 import Gallery from './Gallery';
 import Contact from './Contact';
-import Map from './Map';
 
 class App extends Component {
   state = {};
@@ -20,7 +19,6 @@ class App extends Component {
         <Live />
         <Gallery />
         <Contact />
-        <Map />
       </div>
     );
   }
