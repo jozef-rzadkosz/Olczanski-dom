@@ -6,7 +6,7 @@ footer {
   align-items: center;
   padding: 50px 0;
   color: $color-white;
-  a {
+  a:first-child {
     transition: 0.3s;
     color: $color-white;
     &:hover {
@@ -15,8 +15,24 @@ footer {
       text-decoration: none;
     }
   }
+  a:not(:first-child) {
+    background-color: #fff;
+    padding: 10px 0 16px 0;
+    border-radius: 10px;
+    margin: 0 2px;
+  }
+  .fab {
+    font-size: 55px;
+    vertical-align: middle;
+  }
+  .fa-facebook {
+    color: blue;
+  }
+  .fa-google-plus-square {
+    color: #ee2b19;
+  }
   img {
-    width: 50px;
+    width: 55px;
     margin-left: 5px;
   }
 }

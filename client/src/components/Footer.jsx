@@ -20,6 +20,15 @@ class Footer extends Component {
           >
             <img src='booking.png' alt='' />
           </a>
+          <a
+            href='https://www.google.com/search?source=hp&ei=FPJSXMj_HtHMwAKt3IvYCQ&q=olcza%C5%84ski+dom&btnK=Szukaj+w+Google&oq=olcza%C5%84ski+dom&gs_l=psy-ab.3..35i39j0i22i30.164.2211..2377...2.0..1.214.1786.0j13j1......0....1..gws-wiz.....0..0i131j0i67j0i10j0.w4iTbGyhOds'
+            target='_blank'
+          >
+            <i className='fab fa-google-plus-square' />
+          </a>
+          <a href='https://www.facebook.com/olczanskidom/' target='_blank'>
+            <i className='fab fa-facebook' />
+          </a>
         </div>
       </footer>
     );
