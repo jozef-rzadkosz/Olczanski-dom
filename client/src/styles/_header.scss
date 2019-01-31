@@ -12,6 +12,7 @@
     background-image: url('~/images/17.jpg');
     background-size: cover;
     background-attachment: fixed;
+    background-position: center;
     filter: brightness(50%);
     -webkit-filter: brightness(50%);
   }
@@ -62,7 +63,7 @@
   }
 }
 
-@media only screen and (min-height: 1500px) {
+@media only screen and (min-height: 1200px) {
   #header {
     width: 2600px;
     margin: 0 auto;
@@ -79,6 +80,8 @@
     margin: 0 auto;
     height: 1000px;
     .background-image {
+      background-attachment: initial;
+      background-position: center;
     }
   }
 }
@@ -89,8 +92,9 @@
   }
 }
 
-@media only screen and (max-width: 1024px) and (min-width: 769px) {
+@media only screen and (max-width: 1024px) and (min-width: 769px) and (max-height: 768px) {
   #header {
+    height: 100vh;
     .container {
       .menu {
         width: 100%;
