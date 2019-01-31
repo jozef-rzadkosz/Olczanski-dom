@@ -79,7 +79,22 @@
     margin: 0 auto;
     height: 1000px;
     .background-image {
-      width: 2600px;
+    }
+  }
+}
+
+@media only screen and (max-height: 768px) {
+  #header {
+    height: 768px;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+  #header {
+    .container {
+      .menu {
+        width: 100%;
+      }
     }
   }
 }
