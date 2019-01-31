@@ -1,25 +1,13 @@
 const express = require('express');
 const request = require('request');
 const app = express();
-const keys = require('./config/keys');
-const contact = require('./routes/contact');
 
-const apiKey = keys.api;
-let city = keys.city;
-let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pl&appid=${apiKey}`;
+const contact = require('./routes/contact');
+const weather = require('./routes/weather');
 
 app.use(express.json());
 app.use('/contact', contact);
-
-app.get('/weather', (req, res) => {
-  request(url, function(err, response, body) {
-    if (err) {
-      console.log('error:', error);
-    } else {
-      res.send(body);
-    }
-  });
-});
+app.use('/weather', weather);
 
 app.get('/', (req, res) => {
   res.send('Hello world, server works! :)');

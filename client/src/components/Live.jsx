@@ -51,8 +51,8 @@ class Live extends Component {
     );
   }
 
-  async componentDidMount() {
-    await fetch('/weather')
+  componentDidMount() {
+    fetch('/weather')
       .then(resp => resp.json())
       .then(data => {
         this.setState({ data });

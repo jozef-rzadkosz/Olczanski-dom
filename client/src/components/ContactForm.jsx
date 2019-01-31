@@ -259,10 +259,12 @@ export default class ContactForm extends React.Component {
         surname: (this.state.surname = ''),
         email: (this.state.email = ''),
         phone: (this.state.phone = ''),
-        message: (this.state.message = ''),
-        errors: this.errors
+        message: (this.state.message = '')
       });
     }
+    this.setState({
+      errors: this.errors
+    });
   };
 
   render() {
