@@ -5,6 +5,7 @@
   bottom: -200px;
   opacity: 0;
   visibility: hidden;
+  z-index: 9999;
 }
 
 .fa {
@@ -22,7 +23,7 @@
   font-size: 55px;
   border-radius: 50%;
   transition: 0.5s opacity;
-  z-index: 1070;
+
   background-color: #fff;
   color: $main-color;
   i {
@@ -36,5 +37,12 @@
     transition: 0.25s;
     background-color: $main-color;
     color: $color-white;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+  .go-to-top {
+    bottom: 20px;
+    right: 20px;
   }
 }

@@ -86,12 +86,6 @@
   }
 }
 
-@media only screen and (max-height: 768px) {
-  #header {
-    height: 768px;
-  }
-}
-
 @media only screen and (max-width: 1024px) and (min-width: 769px) and (max-height: 768px) {
   #header {
     height: 100vh;
@@ -100,5 +94,11 @@
         width: 100%;
       }
     }
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  #header {
+    height: 500px;
   }
 }
