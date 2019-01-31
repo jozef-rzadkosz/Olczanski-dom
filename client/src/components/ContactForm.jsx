@@ -19,12 +19,12 @@ export default class ContactForm extends React.Component {
   }
 
   errors = [];
-  errFirst = 'Pole Imię nie może być puste i musi być dłuższe niż 3 znaki';
-  errSurname = 'Pole Nazwisko nie może być puste i musi być dłuższe niż 3 znaki';
+  errFirst = 'Pole Imię musi zawierać min. 3 znaki';
+  errSurname = 'Pole Nazwisko musi zawierać min. 3 znaki';
   errEmail = 'Pole E-mail nie może być puste';
   errEmailCorrect = 'Adres e-mail musi być poprawny';
   errPhone = 'Numer telefonu musi zawierać 9 cyfr';
-  errMessage = 'Pole Treść wiadomości nie może być puste i musi być dłuższe niż 10 znaków';
+  errMessage = 'Pole Treść wiadomości musi zawierać min. 10 znaków';
 
   handleFirstName = e => {
     const firstName = e.target.value;
