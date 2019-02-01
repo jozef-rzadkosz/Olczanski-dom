@@ -15,24 +15,16 @@ footer {
       text-decoration: none;
     }
   }
-  a:not(:first-child) {
-    background-color: #fff;
-    padding: 10px 0 16px 0;
-    border-radius: 10px;
-    margin: 0 2px;
-  }
-  .fab {
-    font-size: 55px;
-    vertical-align: middle;
-  }
-  .fa-facebook {
-    color: blue;
-  }
-  .fa-google-plus-square {
-    color: #ee2b19;
-  }
+
   img {
-    width: 55px;
+    width: 45px;
     margin-left: 5px;
+    object-fit: cover;
   }
+  .booking {
+    width: 50px;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
 }
