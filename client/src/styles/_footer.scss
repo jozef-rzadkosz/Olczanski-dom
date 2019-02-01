@@ -26,5 +26,11 @@ footer {
   }
 }
 
-@media only screen and (max-width: 1024px) and (min-width: 769px) {
+@media only screen and (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    > div {
+      padding-bottom: 10px;
+    }
+  }
 }
