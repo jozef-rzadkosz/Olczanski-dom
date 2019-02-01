@@ -103,5 +103,39 @@
   }
 }
 
-@media only screen and (max-width: 768px) and (min-width: 576px) {
+@media only screen and (max-width: 768px) {
+  #header {
+    position: relative;
+    .container {
+      padding: 0;
+      justify-content: space-between;
+      > div {
+        position: relative;
+        display: flex;
+        img {
+          width: 100%;
+          height: 50%;
+          object-fit: contain;
+        }
+      }
+      div:first-of-type {
+        align-items: flex-end;
+        height: 30%;
+      }
+      div:last-of-type {
+        height: 65%;
+        align-items: flex-start;
+      }
+      .button-aside {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+      }
+      .menu {
+        position: fixed;
+        display: none;
+      }
+    }
+  }
 }

@@ -44,6 +44,7 @@ class Header extends Component {
           <div>
             <img src='Logo.png' alt='Olczański Dom' />
           </div>
+          <button className='button-aside'>Menu</button>
 
           <ul className='menu'>
             <li>
