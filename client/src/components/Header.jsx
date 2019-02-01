@@ -15,6 +15,11 @@ class Header extends Component {
         clearInterval(checkExist);
       }
     }, 100);
+    // Close menu after click on link on mobile
+    if (this.menu.current.classList.contains('menu-show')) {
+      this.menu.current.classList.remove('menu-show');
+      this.button.current.classList.remove('show-button');
+    }
   };
 
   gotoHome = () => {
@@ -36,6 +41,13 @@ class Header extends Component {
     this.goto('contact');
   };
 
+  menu = React.createRef();
+  button = React.createRef();
+
+  openMenu = () => {
+    this.menu.current.classList.toggle('menu-show');
+    this.button.current.classList.toggle('show-button');
+  };
   render() {
     return (
       <section id='header'>
@@ -44,9 +56,11 @@ class Header extends Component {
           <div>
             <img src='Logo.png' alt='Olczański Dom' />
           </div>
-          <button className='button-aside'>Menu</button>
+          <button ref={this.button} onClick={this.openMenu} className='button-aside'>
+            Menu
+          </button>
 
-          <ul className='menu'>
+          <ul ref={this.menu} className='menu'>
             <li>
               <a onClick={this.gotoHome}>Strona główna</a>
             </li>
