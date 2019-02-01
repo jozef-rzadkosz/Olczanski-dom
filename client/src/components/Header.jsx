@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 class Header extends Component {
+  state = {
+    showMenu: false
+  };
   goto = selector => {
     if (window.location.pathname !== '/') {
       this.constructor.changeUrl();
@@ -16,10 +19,10 @@ class Header extends Component {
       }
     }, 100);
     // Close menu after click on link on mobile
-    if (this.menu.current.classList.contains('menu-show')) {
-      this.menu.current.classList.remove('menu-show');
-      this.button.current.classList.remove('show-button');
-    }
+    // if (this.menu.current.classList.contains('menu-show')) {
+    //   this.menu.current.classList.remove('menu-show');
+    //   this.button.current.classList.remove('show-button');
+    // }
   };
 
   gotoHome = () => {
@@ -44,9 +47,26 @@ class Header extends Component {
   menu = React.createRef();
   button = React.createRef();
 
-  openMenu = () => {
-    this.menu.current.classList.toggle('menu-show');
-    this.button.current.classList.toggle('show-button');
+  click = e => {
+    if (!e.target.classList.contains('menu')) {
+      this.setState({
+        showMenu: false
+      });
+      document.removeEventListener('click', this.click);
+    }
+  };
+  openMenu = e => {
+    if (this.state.showMenu) {
+      document.removeEventListener('click', this.click);
+      this.setState({
+        showMenu: false
+      });
+    } else {
+      document.addEventListener('click', this.click);
+      this.setState({
+        showMenu: true
+      });
+    }
   };
   render() {
     return (
@@ -56,11 +76,15 @@ class Header extends Component {
           <div>
             <img src='Logo.png' alt='Olczański Dom' />
           </div>
-          <button ref={this.button} onClick={this.openMenu} className='button-aside'>
-            Menu
+          <button
+            ref={this.button}
+            onClick={this.openMenu}
+            className={this.state.showMenu ? 'button-aside show-button' : 'button-aside'}
+          >
+            <i className='fas fa-bars' />
           </button>
 
-          <ul ref={this.menu} className='menu'>
+          <ul ref={this.menu} className={this.state.showMenu ? 'menu menu-show' : 'menu'}>
             <li>
               <a onClick={this.gotoHome}>Strona główna</a>
             </li>
