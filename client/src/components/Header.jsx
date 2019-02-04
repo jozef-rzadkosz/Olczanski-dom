@@ -19,6 +19,8 @@ class Header extends Component {
       }
     }, 100);
     this.setState({ showMenu: false });
+    this.menu.current.classList.remove('menu-show');
+    this.button.current.classList.remove('show-button');
   };
 
   gotoHome = () => {
@@ -51,11 +53,15 @@ class Header extends Component {
     }
   };
   closeMenu = async () => {
+    this.menu.current.classList.remove('menu-show');
+    this.button.current.classList.remove('show-button');
     await this.setState({ showMenu: false });
     this.clickable.current.removeEventListener('click', this.closeMenu);
   };
   openMenu = async e => {
-    await this.setState({ showMenu: true });
+    this.menu.current.classList.toggle('menu-show');
+    this.button.current.classList.toggle('show-button');
+    await this.setState(prevState => ({ showMenu: !prevState.showMenu }));
     if (this.state.showMenu) {
       this.clickable.current.addEventListener('click', this.closeMenu);
     }
@@ -68,15 +74,11 @@ class Header extends Component {
           <div>
             <img src='Logo.png' alt='Olczański Dom' />
           </div>
-          <button
-            ref={this.button}
-            onClick={this.openMenu}
-            className={this.state.showMenu ? 'button-aside show-button' : 'button-aside'}
-          >
+          <button ref={this.button} onClick={this.openMenu} className='button-aside'>
             <i className='fas fa-bars' />
           </button>
 
-          <ul ref={this.menu} className={this.state.showMenu ? 'menu menu-show' : 'menu'}>
+          <ul ref={this.menu} className='menu'>
             <li>
               <a onClick={this.gotoHome}>Strona główna</a>
             </li>
