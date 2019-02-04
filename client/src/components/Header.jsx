@@ -18,11 +18,7 @@ class Header extends Component {
         clearInterval(checkExist);
       }
     }, 100);
-    // Close menu after click on link on mobile
-    // if (this.menu.current.classList.contains('menu-show')) {
-    //   this.menu.current.classList.remove('menu-show');
-    //   this.button.current.classList.remove('show-button');
-    // }
+    this.setState({ showMenu: false });
   };
 
   gotoHome = () => {
@@ -46,26 +42,22 @@ class Header extends Component {
 
   menu = React.createRef();
   button = React.createRef();
+  clickable = React.createRef();
 
   click = e => {
     if (!e.target.classList.contains('menu')) {
-      this.setState({
-        showMenu: false
-      });
+      this.setState({ showMenu: false });
       document.removeEventListener('click', this.click);
     }
   };
-  openMenu = e => {
+  closeMenu = async () => {
+    await this.setState({ showMenu: false });
+    this.clickable.current.removeEventListener('click', this.closeMenu);
+  };
+  openMenu = async e => {
+    await this.setState({ showMenu: true });
     if (this.state.showMenu) {
-      document.removeEventListener('click', this.click);
-      this.setState({
-        showMenu: false
-      });
-    } else {
-      document.addEventListener('click', this.click);
-      this.setState({
-        showMenu: true
-      });
+      this.clickable.current.addEventListener('click', this.closeMenu);
     }
   };
   render() {
@@ -101,6 +93,7 @@ class Header extends Component {
               <a onClick={this.gotoContact}>Kontakt</a>
             </li>
           </ul>
+          <div ref={this.clickable} className='clickable' />
 
           <div>
             <img src='parzenica.png' alt='parzenica' />
