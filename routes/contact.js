@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Joi = require('joi');
 const nodemailer = require('nodemailer');
-// const prod = require('../config/prod');
+const prod = require('../config/prod');
 const keys = require('../config/keys');
 
 router.post('/', (req, res) => {
@@ -31,18 +31,18 @@ router.post('/', (req, res) => {
   console.log(result);
 
   let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
+    host: 'poczta.o2.pl',
     port: 465,
     secure: true,
     auth: {
-      user: keys.username,
-      pass: keys.password
+      user: prod.username,
+      pass: prod.password
     }
   });
 
   let mailOptions = {
     from: `${req.body.firstName} ${req.body.surname} <${req.body.email}>`,
-    cc: keys.username, // list of receivers
+    cc: prod.username, // list of receivers
     to: `${req.body.firstName} ${req.body.surname} <${req.body.email}>`,
     subject: `Wiadomość - ${req.body.from}`, // Subject line
     text: 'Hello world', // plain text body
