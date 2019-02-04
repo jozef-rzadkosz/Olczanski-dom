@@ -93,7 +93,7 @@ class Header extends Component {
               <a onClick={this.gotoContact}>Kontakt</a>
             </li>
           </ul>
-          <div ref={this.clickable} className='clickable' />
+          <div ref={this.clickable} className={this.state.showMenu ? 'clickable' : 'clickable-hide'} />
 
           <div>
             <img src='parzenica.png' alt='parzenica' />

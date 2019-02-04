@@ -177,6 +177,7 @@
         }
       }
       .clickable {
+        display: block;
         position: fixed;
         top: 0;
         left: 0;
@@ -185,6 +186,9 @@
         background-color: transparent;
         cursor: pointer;
         z-index: 9997;
+        &-hide {
+          display: none;
+        }
       }
       .menu-show {
         left: 0;
