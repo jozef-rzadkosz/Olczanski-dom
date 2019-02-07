@@ -1,4 +1,4 @@
 module.exports = {
-  username: process.env.OLCZANSKI_USERNAME,
-  password: process.env.OLCZANSKI_PASSWORD
+  username: process.env.OLCZA_USERNAME,
+  password: process.env.OLCZA_PASSWORD
 };
