@@ -31,9 +31,7 @@ router.post('/', (req, res) => {
   console.log(result);
 
   let transporter = nodemailer.createTransport({
-    host: 'poczta.o2.pl',
-    port: 465,
-    secure: true,
+    service: 'Gmail',
     auth: {
       user: prod.username,
       pass: prod.password

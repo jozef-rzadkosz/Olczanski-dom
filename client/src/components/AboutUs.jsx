@@ -16,6 +16,7 @@ class AboutUsItem extends Component {
 
 class AboutUs extends Component {
   state = {};
+
   render() {
     return (
       <section id='about-us'>

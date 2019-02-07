@@ -51,12 +51,13 @@ class Live extends Component {
     );
   }
 
-  componentDidMount() {
-    fetch('/weather')
+  async componentDidMount() {
+    await fetch('/weather')
       .then(resp => resp.json())
       .then(data => {
         this.setState({ data });
-      });
+      })
+      .catch(err => console.log('error'));
   }
 }
 
