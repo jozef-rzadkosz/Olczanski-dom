@@ -20,7 +20,6 @@ router.post('/', (req, res) => {
       .required(),
     phone: Joi.string()
       .min(3)
-      .max(10)
       .required(),
     message: Joi.string()
       .min(10)
