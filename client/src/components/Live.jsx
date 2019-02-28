@@ -30,7 +30,7 @@ class Live extends Component {
               <div>
                 <div>
                   <h3>{this.state.data.name}, Polska</h3>
-                  <h3>{this.state.data.main.temp - 274.15}&#176; C</h3>
+                  <h3>{Math.round(this.state.data.main.temp - 274.15)}&#176; C</h3>
                 </div>
 
                 <div>
