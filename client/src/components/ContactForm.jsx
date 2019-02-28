@@ -23,7 +23,7 @@ export default class ContactForm extends React.Component {
   errSurname = 'Pole Nazwisko musi zawierać min. 3 znaki';
   errEmail = 'Pole E-mail nie może być puste';
   errEmailCorrect = 'Adres e-mail musi być poprawny';
-  errPhone = 'Numer telefonu musi zawierać 9 cyfr';
+  errPhone = 'Numer telefonu musi zawierać min 9 cyfr';
   errMessage = 'Pole Treść wiadomości musi zawierać min. 10 znaków';
 
   handleFirstName = e => {
@@ -122,7 +122,7 @@ export default class ContactForm extends React.Component {
   handlePhone = e => {
     const phone = e.target.value;
     // Validation
-    if (phone.length !== 9) {
+    if (phone.length < 9) {
       if (this.errors.indexOf(this.errPhone) < 0) {
         this.errors.push(this.errPhone);
       }
