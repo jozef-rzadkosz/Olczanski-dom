@@ -1,0 +1,14 @@
+{
+  "Button": {
+    "description": "Auto imported from components/Button.vue"
+  },
+  "Navigation": {
+    "description": "Auto imported from components/Navigation.vue"
+  },
+  "FormsInput": {
+    "description": "Auto imported from components/forms/Input.vue"
+  },
+  "FormsTextarea": {
+    "description": "Auto imported from components/forms/Textarea.vue"
+  }
+}

@@ -1,0 +1,68 @@
+@import "assets/_typography.scss";
+
+// fonts
+:root {
+  --header-font: "Poppins", sans-serif;
+  --body-font: "Open Sans", sans-serif;
+  --font-ravie: "Ravie", sans-serif;
+
+  --primary-color: #e31e25;
+  --background-color: #f8f8f8;
+  --font-color: #323232;
+  --white-color: #fff;
+  --black-color: #000;
+  --recommend-color: rgba(0, 0, 0, 0.5);
+  --border-color: #f0f0f0;
+  --success-color: #67ba6d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: var(--body-font);
+  color: var(--font-color);
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1236px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+p {
+  letter-spacing: 0.03rem;
+  line-height: 1.4;
+}
+
+.loading {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  font-family: var(--body-font);
+  font-weight: bold;
+  color: var(--white-color);
+  z-index: 1100;
+  font-size: 1.5rem;
+  img {
+    box-shadow: none !important;
+  }
+}
+
+.nuxt-link-active {
+  color: var(--primary-color) !important;
+}
+
+.text--grey {
+  color: var(--font-color);
+}
