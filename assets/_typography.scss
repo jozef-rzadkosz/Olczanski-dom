@@ -1,4 +1,5 @@
 @use "@/assets/breakpoints" as bp;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@700&display=swap');
 
 .heading-1,
 .heading-2,
@@ -8,6 +9,7 @@
   font-family: var(--header-font);
   text-rendering: optimizeLegibility;
   line-height: 1.7;
+  text-transform: uppercase;
 }
 
 .heading-1 {
@@ -38,3 +40,4 @@
 strong {
   font-weight: 600;
 }
+

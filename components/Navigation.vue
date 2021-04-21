@@ -1,11 +1,6 @@
 <template>
   <nav class="nav">
     <div class="container nav__container">
-      <nuxt-link class="nav__link" to="/">
-        <h1 class="nav__logo">
-          Rolet Dom
-        </h1>
-      </nuxt-link>
       <div
         :class="
           isOpen ? 'nav__background nav__background--active' : 'nav__background'
@@ -17,25 +12,29 @@
       </svg>
       <ul :class="isOpen ? 'nav__list nav__list--active' : 'nav__list'">
         <li class="nav__item" @click="isOpen = false">
-          <nuxt-link class="nav__link" exact to="/">
+          <a class="nav__link" href="#witamy">
             Strona główna
-          </nuxt-link>
+          </a>
         </li>
         <li class="nav__item" @click="isOpen = false">
-          <nuxt-link class="nav__link" exact to="/o-nas">
+          <a class="nav__link" href="#o-nas">
             O nas
-          </nuxt-link>
-        </li>
-
-        <li class="nav__item" @click="isOpen = false">
-          <nuxt-link class="nav__link" to="/produkty">
-            Produkty
-          </nuxt-link>
+          </a>
         </li>
         <li class="nav__item" @click="isOpen = false">
-          <nuxt-link class="nav__link" exact to="/kontakt">
+          <a class="nav__link" href="#na-zywo">
+            Na żywo
+          </a>
+        </li>
+        <li class="nav__item" @click="isOpen = false">
+          <a class="nav__link" href="#galeria">
+            Galeria
+          </a>
+        </li>
+        <li class="nav__item" @click="isOpen = false">
+          <a class="nav__link" href="#kontakt">
             Kontakt
-          </nuxt-link>
+          </a>
         </li>
       </ul>
     </div>
@@ -57,7 +56,6 @@ export default {
 @use '@/assets/breakpoints' as bp;
 
 .nav {
-  background-color: var(--white-color);
   &__container {
     display: flex;
     justify-content: space-between;
@@ -67,17 +65,13 @@ export default {
     text-decoration: none;
     padding: 0.5rem;
     text-transform: uppercase;
-    color: var(--font-color);
+    color: var(--white-color);
     font-weight: 900;
     transition: 0.2s ease-in-out;
     font-size: 1rem;
-  }
-  &__logo {
-    font-family: "Ravie", sans-serif;
-    font-size: 2rem;
-    text-transform: capitalize;
-    color: var(--primary-color);
-    padding: 0;
+    &:hover {
+      color: var(--primary-color);
+    }
   }
   &__list {
     display: grid;

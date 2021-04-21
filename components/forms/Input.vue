@@ -6,7 +6,6 @@
     :name="name"
   >
     <div class="input">
-      <label class="input__label" :for="name">{{ label }}</label>
       <input
         :id="name"
         type="text"
@@ -68,25 +67,32 @@ export default {
 .input {
   display: grid;
   gap: 0.5rem;
-
   &__label, &__error {
     font-size: 0.875rem;
     font-weight: 700;
   }
   &__field {
     height: 2.8rem;
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 4px;
     padding: 0 1rem;
     font-family: inherit;
     font-size: .875rem;
+    color: var(--white-color);
+    background-color: var(--primary-color-rgba);
+    &::placeholder {
+      color: var(--white-color)
+    }
     &:focus {
       outline: none;
       border-color: var(--font-color)
     }
   }
   &__error {
-    color: var(--primary-color)
+    background-color: var(--error-color);
+    color: var(--white-color);
+    border-radius: 4px;
+    padding: .3rem .7rem;
   }
 }
 </style>

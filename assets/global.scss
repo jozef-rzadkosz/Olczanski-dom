@@ -2,12 +2,14 @@
 
 // fonts
 :root {
-  --header-font: "Poppins", sans-serif;
+  --header-font: "Raleway", sans-serif;
   --body-font: "Open Sans", sans-serif;
-  --font-ravie: "Ravie", sans-serif;
-
-  --primary-color: #e31e25;
-  --background-color: #f8f8f8;
+  --primary-color: #fcc150;
+  --primary-color-rgba: rgba(252,193,80,.5);
+  --secondary-color: #0095e1;
+  --tertiary-color: #007dbe;
+  --error-color: #e31e25;
+  --background-color: #f7f9f4;
   --font-color: #323232;
   --white-color: #fff;
   --black-color: #000;
@@ -22,8 +24,11 @@
   box-sizing: inherit;
 }
 
+:root {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: var(--background-color);
   font-family: var(--body-font);
   color: var(--font-color);
   box-sizing: border-box;
@@ -38,6 +43,9 @@ body {
 p {
   letter-spacing: 0.03rem;
   line-height: 1.4;
+  &:not(:last-of-type) {
+    margin-bottom: 1.4rem;
+  }
 }
 
 .loading {

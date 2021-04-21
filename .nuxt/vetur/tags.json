@@ -1,6 +1,24 @@
 {
+  "AboutUs": {
+    "description": "Auto imported from components/AboutUs.vue"
+  },
   "Button": {
     "description": "Auto imported from components/Button.vue"
+  },
+  "Footer": {
+    "description": "Auto imported from components/Footer.vue"
+  },
+  "Gallery": {
+    "description": "Auto imported from components/Gallery.vue"
+  },
+  "Header": {
+    "description": "Auto imported from components/Header.vue"
+  },
+  "Home": {
+    "description": "Auto imported from components/Home.vue"
+  },
+  "Live": {
+    "description": "Auto imported from components/Live.vue"
   },
   "Navigation": {
     "description": "Auto imported from components/Navigation.vue"

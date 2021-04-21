@@ -6,7 +6,6 @@
     :name="name"
   >
     <div class="input">
-      <label class="input__label" :for="name">{{ label }}</label>
       <textarea
         :id="name"
         type="text"
@@ -76,18 +75,26 @@ export default {
   }
   &__field {
     resize: none;
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 4px;
     padding: .8rem 1rem;
     font-family: inherit;
     font-size: .875rem;
+    color: var(--white-color);
+    background-color: var(--primary-color-rgba);
+    &::placeholder {
+      color: var(--white-color)
+    }
     &:focus {
       outline: none;
       border-color: var(--font-color)
     }
   }
   &__error {
-    color: var(--primary-color)
+    background-color: var(--error-color);
+    color: var(--white-color);
+    border-radius: 4px;
+    padding: .3rem .7rem;
   }
 }
 </style>
