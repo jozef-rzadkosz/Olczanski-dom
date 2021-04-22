@@ -77,8 +77,10 @@ export default {
 </script>
 
 <style scoped lang="sass">
+@use '@/assets/breakpoints' as bp
+
 .live
-  padding: 3.125rem
+  padding: 3.125rem 0
   &__title
     text-align: center
     margin-bottom: 2rem
@@ -86,9 +88,10 @@ export default {
     margin: 2rem 0
   &__cameras
     display: grid
-    gap: 2rem
+    gap: 1rem
     grid-template-columns: 1fr 1fr
-  &__camera
+    @media screen and (max-width: bp.$sm)
+      grid-template-columns: 1fr
   &__camera-title
     text-align: center
     margin-bottom: .5rem
@@ -100,6 +103,12 @@ export default {
     display: grid
     grid-template-columns: .3fr 1fr 1fr .3fr
     grid-template-areas: ". left right ."
+    @media screen and (max-width: bp.$md)
+      grid-template-areas: "left right"
+      grid-template-columns: 1fr 1fr
+    @media screen and (max-width: bp.$sm)
+      grid-template-areas: "left" "right"
+      grid-template-columns: 1fr
   &__weather-title, &__weather
     color: var(--white-color)
   &__left, &__right

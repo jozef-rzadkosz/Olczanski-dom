@@ -28,7 +28,7 @@
               placeholder="Adres email"
             />
             <Input
-              v-model="form.fullName"
+              v-model="form.phone"
               name="phone"
               rules="required|min:9|max:12"
               placeholder="Numer telefonu"
@@ -55,6 +55,9 @@
           allowFullScreen
           class="footer__map"
         />
+      </div>
+      <div class="footer__copyright">
+        Copyright {{ new Date().getFullYear() }} &copy; | Olczański Dom
       </div>
     </div>
   </footer>
@@ -85,15 +88,66 @@ export default {
       },
       form: {
         fullName: '',
+        phone: '',
         email: '',
         message: ''
       }
+    }
+  },
+  methods: {
+    openDialog (type, text) {
+      this.message = {
+        type,
+        text
+      }
+      this.closeDialog()
+    },
+    closeDialog () {
+      setTimeout(() => {
+        this.message = {
+          type: '',
+          text: ''
+        }
+      }, 5000)
+    },
+    onSubmit () {
+      this.isSubmitting = true
+      console.log(this.form)
+      fetch('http://localhost:5000/olczanski-dom/send', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(this.form)
+      })
+        .then(resp => resp.json())
+        .then(() => {
+          this.isSubmitting = false
+          this.form = {
+            fullName: '',
+            email: '',
+            phone: '',
+            message: ''
+          }
+          this.$refs.form.reset()
+          this.openDialog('success', 'Wiadomość została wysłana pomyślnie!')
+        })
+        .catch(() => {
+          this.isSubmitting = false
+          this.openDialog(
+            'failed',
+            'Coś poszło nie tak spróbuj ponownie później.'
+          )
+        })
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
+@use '@/assets/breakpoints' as bp;
+
 .footer {
   position: relative;
   padding: 3.125rem 0;
@@ -126,6 +180,9 @@ export default {
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 2rem;
+    @media screen and (max-width: bp.$md) {
+      grid-template-columns: 1fr;
+    }
   }
   &__form {
     display: grid;
@@ -135,10 +192,22 @@ export default {
     width: 100%;
     border: none;
     height: 100%;
+
+    @media screen and (max-width: bp.$md) {
+      height: 50vw;
+    }
+    @media screen and (max-width: bp.$sm) {
+      height: 80vw;
+    }
   }
   &__button {
     border: none !important;
     background-color: var(--primary-color-rgba) !important;
+  }
+  &__copyright {
+    text-align: center;
+    color: var(--white-color);
+    margin-top: 2rem;
   }
 }
 </style>

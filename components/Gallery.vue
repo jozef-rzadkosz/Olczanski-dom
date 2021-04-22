@@ -60,7 +60,7 @@ export default {
 
   &__items
     display: grid
-    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr))
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr))
     grid-auto-rows: 300px
     gap: 0.3rem
     padding-top: 2rem

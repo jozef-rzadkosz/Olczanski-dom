@@ -31,6 +31,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@use '@/assets/breakpoints' as bp;
+
 .about {
   padding: 3.125rem 0;
   background-color: var(--background-color);
@@ -41,9 +43,12 @@ export default {
   }
   &__items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18.1rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
     grid-template-rows: max-content 1fr;
     gap: 1rem;
+    @media screen and (max-width: bp.$sm) {
+      grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    }
   }
   &__item {
     display: grid;

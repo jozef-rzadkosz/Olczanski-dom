@@ -72,6 +72,9 @@ export default {
     &:hover {
       color: var(--primary-color);
     }
+    @media only screen and (max-width: bp.$md) {
+      color: var(--font-color)
+    }
   }
   &__list {
     display: grid;
@@ -99,10 +102,14 @@ export default {
   }
   &__mobile-btn {
     display: none;
-    width: 1.4rem;
-    height: 1.4rem;
-    fill: var(--font-color);
+    width: 3rem;
+    height: 3rem;
+    fill: var(--white-color);
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,1));
     @media only screen and (max-width: bp.$md) {
+      position: fixed;
+      top: 1.5rem;
+      right: 1rem;
       display: flex;
       transition: 0.2s ease-in-out;
       cursor: pointer;

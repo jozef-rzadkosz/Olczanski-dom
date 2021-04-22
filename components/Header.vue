@@ -10,11 +10,11 @@
       >
     </div>
     <div>
-      <img src="/Logo.png" alt="Olczański Dom">
+      <img src="/Logo.png" alt="Olczański Dom" class="header__logo">
     </div>
     <Navigation />
     <div>
-      <img src="/parzenica.png" alt="parzenica">
+      <img src="/parzenica.png" alt="parzenica" class="header__mark">
     </div>
   </header>
 </template>
@@ -38,6 +38,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@use '@/assets/breakpoints' as bp;
+
 .header {
   position: relative;
   display: flex;
@@ -66,6 +68,18 @@ export default {
     height: 100%;
     width: 100%;
     object-fit: cover;
+  }
+  &__logo {
+    width: 100%;
+  }
+  &__mark {
+    width: 100%;
+    @media screen and (max-width: bp.$md) {
+      width: 25vw;
+    }
+    @media screen and (max-width: bp.$sm) {
+      width: 50vw;
+    }
   }
 }
 </style>
