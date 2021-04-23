@@ -13,6 +13,14 @@
           ref="form"
           v-slot="{ handleSubmit, failed, invalid }"
         >
+          <div
+            v-if="message.text !== ''"
+            :class="
+              message.type === 'success' ? 'footer__success' : 'footer__failed'
+            "
+          >
+            {{ message.text }}
+          </div>
           <form class="footer__form" @submit.prevent="handleSubmit(onSubmit)">
             <Input
               v-model="form.fullName"
@@ -57,7 +65,37 @@
         />
       </div>
       <div class="footer__copyright">
-        Copyright {{ new Date().getFullYear() }} &copy; | Olczański Dom
+        <p>Copyright {{ new Date().getFullYear() }} &copy; | Olczański Dom</p>
+        <div class="footer__info">
+          <p>Znajdź nas na:</p>
+          <a
+            target="_blank"
+            href="http://www.booking.com/Share-D2gu71"
+          >
+            <img
+              src="/booking.png"
+              class="footer__icon"
+              alt=""
+            >
+            <a
+              target="_blank"
+              href="https://www.google.com/search?source=hp&ei=FPJSXMj_HtHMwAKt3IvYCQ&q=olcza%C5%84ski+dom&btnK=Szukaj+w+Google&oq=olcza%C5%84ski+dom&gs_l=psy-ab.3..35i39j0i22i30.164.2211..2377...2.0..1.214.1786.0j13j1......0....1..gws-wiz.....0..0i131j0i67j0i10j0.w4iTbGyhOds#btnK=Szukaj%20w%20Google"
+            >
+              <img
+                src="/Google_plus_icon.svg"
+                class="footer__icon"
+                alt=""
+              >
+            </a>
+            <a target="_blank" href="https://www.facebook.com/olczanskidom/">
+              <img
+                src="/facebook.png"
+                class="footer__icon"
+                alt=""
+              >
+            </a>
+          </a>
+        </div>
       </div>
     </div>
   </footer>
@@ -112,7 +150,6 @@ export default {
     },
     onSubmit () {
       this.isSubmitting = true
-      console.log(this.form)
       fetch('http://localhost:5000/olczanski-dom/send', {
         method: 'POST',
         headers: {
@@ -178,11 +215,25 @@ export default {
   }
   &__content {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     @media screen and (max-width: bp.$md) {
       grid-template-columns: 1fr;
     }
+  }
+  &__success,
+  &__failed {
+    color: var(--white-color);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  &__success {
+    background-color: var(--success-color);
+  }
+  &__failed {
+    background-color: var(--error-color);
   }
   &__form {
     display: grid;
@@ -205,9 +256,27 @@ export default {
     background-color: var(--primary-color-rgba) !important;
   }
   &__copyright {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: var(--white-color);
     margin-top: 2rem;
+    font-size: .875rem;
+    @media screen and (max-width: bp.$sm) {
+      flex-direction: column-reverse;
+    }
+  }
+  &__info{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 1rem;
+    @media screen and (max-width: bp.$sm) {
+      margin-bottom: 2rem;
+    }
+  }
+  &__icon {
+    height: 40px;
   }
 }
 </style>

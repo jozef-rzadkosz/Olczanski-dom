@@ -83,6 +83,7 @@ export default {
     gap: 2rem;
     padding: 1rem 0;
     list-style: none;
+
     @media only screen and (max-width: bp.$md) {
       position: fixed;
       grid-auto-flow: row;
@@ -106,6 +107,7 @@ export default {
     height: 3rem;
     fill: var(--white-color);
     filter: drop-shadow(0 1px 1px rgba(0,0,0,1));
+    z-index: 1;
     @media only screen and (max-width: bp.$md) {
       position: fixed;
       top: 1.5rem;

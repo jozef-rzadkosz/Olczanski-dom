@@ -23,7 +23,7 @@ export default {
     meta: [
       { title: 'RoletDom – Rolety, moskitiery, żaluzje w Zakopanem!' },
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
       {
         hid: 'og:title',
         name: 'og:title',
@@ -91,5 +91,8 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {},
+  server: {
+    host: '0.0.0.0'
+  }
 }
