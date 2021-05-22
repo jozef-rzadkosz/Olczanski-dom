@@ -9,7 +9,7 @@
           <svg class="about__icon">
             <use :xlink:href="`/sprite.svg#icon-${about.iconPath}`" />
           </svg>
-          <p class="about__desc">
+          <p>
             {{ about.title }}
           </p>
         </div>
@@ -59,8 +59,6 @@ export default {
   }
   &__icon {
     width: 5rem;
-  }
-  &__desc {
   }
 }
 </style>

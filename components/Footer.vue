@@ -68,32 +68,17 @@
         <p>Copyright {{ new Date().getFullYear() }} &copy; | Olczański Dom</p>
         <div class="footer__info">
           <p>Znajdź nas na:</p>
+          <a target="_blank" href="http://www.booking.com/Share-D2gu71">
+            <img src="/booking.png" class="footer__icon" alt="">
+          </a>
           <a
             target="_blank"
-            href="http://www.booking.com/Share-D2gu71"
+            href="https://www.google.com/search?source=hp&ei=FPJSXMj_HtHMwAKt3IvYCQ&q=olcza%C5%84ski+dom&btnK=Szukaj+w+Google&oq=olcza%C5%84ski+dom&gs_l=psy-ab.3..35i39j0i22i30.164.2211..2377...2.0..1.214.1786.0j13j1......0....1..gws-wiz.....0..0i131j0i67j0i10j0.w4iTbGyhOds#btnK=Szukaj%20w%20Google"
           >
-            <img
-              src="/booking.png"
-              class="footer__icon"
-              alt=""
-            >
-            <a
-              target="_blank"
-              href="https://www.google.com/search?source=hp&ei=FPJSXMj_HtHMwAKt3IvYCQ&q=olcza%C5%84ski+dom&btnK=Szukaj+w+Google&oq=olcza%C5%84ski+dom&gs_l=psy-ab.3..35i39j0i22i30.164.2211..2377...2.0..1.214.1786.0j13j1......0....1..gws-wiz.....0..0i131j0i67j0i10j0.w4iTbGyhOds#btnK=Szukaj%20w%20Google"
-            >
-              <img
-                src="/Google_plus_icon.svg"
-                class="footer__icon"
-                alt=""
-              >
-            </a>
-            <a target="_blank" href="https://www.facebook.com/olczanskidom/">
-              <img
-                src="/facebook.png"
-                class="footer__icon"
-                alt=""
-              >
-            </a>
+            <img src="/Google_plus_icon.svg" class="footer__icon" alt="">
+          </a>
+          <a target="_blank" href="https://www.facebook.com/olczanskidom/">
+            <img src="/facebook.png" class="footer__icon" alt="">
           </a>
         </div>
       </div>
@@ -243,7 +228,6 @@ export default {
     width: 100%;
     border: none;
     height: 100%;
-
     @media screen and (max-width: bp.$md) {
       height: 50vw;
     }
@@ -261,12 +245,12 @@ export default {
     align-items: center;
     color: var(--white-color);
     margin-top: 2rem;
-    font-size: .875rem;
+    font-size: 0.875rem;
     @media screen and (max-width: bp.$sm) {
       flex-direction: column-reverse;
     }
   }
-  &__info{
+  &__info {
     display: grid;
     grid-auto-flow: column;
     align-items: center;

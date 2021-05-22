@@ -35,9 +35,6 @@ export default {
         .then(data => resolve(data))
         .catch(err => reject(err))
     })
-  },
-  mounted () {
-    console.log(this)
   }
 }
 </script>
