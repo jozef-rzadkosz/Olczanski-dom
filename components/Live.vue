@@ -66,7 +66,7 @@ export default {
     }
   },
   async mounted () {
-    await fetch('http://localhost:5000/olczanski-dom/weather')
+    await fetch('https://freestyle09.usermd.net/olczanski-dom/weather')
       .then(resp => resp.json())
       .then((data) => {
         this.weather = data

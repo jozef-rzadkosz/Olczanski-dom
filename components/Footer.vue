@@ -135,7 +135,7 @@ export default {
     },
     onSubmit () {
       this.isSubmitting = true
-      fetch('http://localhost:5000/olczanski-dom/send', {
+      fetch('https://freestyle09.usermd.net/olczanski-dom/send', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
