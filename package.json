@@ -4,10 +4,12 @@
   "description": "Website of the company dealing with renting rooms",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "server": "nodemon app.js",
-    "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint": "yarn lint:js"
   },
   "repository": {
     "type": "git",
@@ -20,10 +22,25 @@
   },
   "homepage": "https://github.com/freestyle09/Olczanski-dom#readme",
   "dependencies": {
-    "concurrently": "^4.1.0",
-    "express": "^4.16.4",
-    "joi": "^14.3.1",
-    "nodemailer": "^5.1.1",
-    "request": "^2.88.0"
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "core-js": "^3.8.3",
+    "graphql": "^15.5.0",
+    "graphql-request": "^3.4.0",
+    "nuxt": "^2.14.12",
+    "sanitize-html": "^2.3.3",
+    "sass": "^1.32.8",
+    "sass-loader": "^10.1.1",
+    "vee-validate": "^3.4.5",
+    "vue-cool-lightbox": "^2.7.1"
+  },
+  "devDependencies": {
+    "@nuxt/types": "~2.15.0",
+    "@nuxtjs/eslint-config": "^5.0.0",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/pwa": "^3.3.5",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.18.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-vue": "^7.5.0"
   }
 }
