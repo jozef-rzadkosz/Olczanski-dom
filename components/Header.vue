@@ -7,20 +7,28 @@
         :alt="backgroundImage.alt"
         :srcset="backgroundImage.webpSrc"
         class="header__image"
-      >
+      />
     </div>
     <div>
-      <img src="/Logo.png" alt="Olczański Dom" class="header__logo">
+      <img
+        src="/Logo.png"
+        alt="Olczański Dom"
+        class="header__logo"
+      />
     </div>
     <Navigation />
     <div>
-      <img src="/parzenica.png" alt="parzenica" class="header__mark">
+      <img
+        src="/parzenica.png"
+        alt="parzenica"
+        class="header__mark"
+      />
     </div>
   </header>
 </template>
 
 <script>
-import Navigation from '~/components/Navigation'
+import Navigation from '~/components/Navigation';
 export default {
   name: 'Header',
   components: { Navigation },
@@ -30,11 +38,11 @@ export default {
       default: () => ({
         src: '',
         alt: '',
-        webpSrc: ''
-      })
-    }
-  }
-}
+        webpSrc: '',
+      }),
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">

@@ -16,25 +16,19 @@
 </template>
 
 <script>
-import Header from '@/components/Header'
-import { request } from '@/datocms'
-import { HEADER_QUERY } from '@/constants/graphql'
-import Home from '~/components/Home'
-import AboutUs from '~/components/AboutUs'
-import Live from '~/components/Live'
-import Gallery from '~/components/Gallery'
-import Footer from '~/components/Footer'
+import { request } from '@/datocms';
+import { HEADER_QUERY } from '~/graphql';
 
 export default {
-  components: { Footer, Gallery, Live, AboutUs, Home, Header },
-  asyncData () {
+  components: {},
+  asyncData() {
     return new Promise((resolve, reject) => {
       request({
-        query: HEADER_QUERY
+        query: HEADER_QUERY,
       })
-        .then(data => resolve(data))
-        .catch(err => reject(err))
-    })
-  }
-}
+        .then((data) => resolve(data))
+        .catch((err) => reject(err));
+    });
+  },
+};
 </script>

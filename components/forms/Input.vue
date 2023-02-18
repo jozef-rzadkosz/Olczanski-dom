@@ -14,60 +14,65 @@
         :value="value"
         :placeholder="placeholder"
         @input="$emit('input', $event.target.value)"
+      />
+      <span
+        v-if="errors.length"
+        class="input__error"
+        >{{ errors[0] }}</span
       >
-      <span v-if="errors.length" class="input__error">{{ errors[0] }}</span>
     </div>
   </ValidationProvider>
 </template>
 
 <script>
-import { ValidationProvider } from 'vee-validate'
+import { ValidationProvider } from 'vee-validate';
 export default {
   components: {
-    ValidationProvider
+    ValidationProvider,
   },
   model: {
-    event: 'input'
+    event: 'input',
   },
   props: {
     type: {
       type: String,
-      default: 'text'
+      default: 'text',
     },
     rules: {
       type: String,
-      default: ''
+      default: '',
     },
     name: {
       type: String,
-      default: ''
+      default: '',
     },
     value: {
       type: String,
-      required: true
+      required: true,
     },
     label: {
       type: String,
-      default: ''
+      default: '',
     },
     placeholder: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
-  data () {
+  data() {
     return {
-      content: this.value
-    }
-  }
-}
+      content: this.value,
+    };
+  },
+};
 </script>
 
 <style scoped lang="scss">
 .input {
   display: grid;
   gap: 0.5rem;
-  &__label, &__error {
+  &__label,
+  &__error {
     font-size: 0.875rem;
     font-weight: 700;
   }
@@ -77,22 +82,22 @@ export default {
     border-radius: 4px;
     padding: 0 1rem;
     font-family: inherit;
-    font-size: .875rem;
+    font-size: 0.875rem;
     color: var(--white-color);
     background-color: var(--primary-color-rgba);
     &::placeholder {
-      color: var(--white-color)
+      color: var(--white-color);
     }
     &:focus {
       outline: none;
-      border-color: var(--font-color)
+      border-color: var(--font-color);
     }
   }
   &__error {
     background-color: var(--error-color);
     color: var(--white-color);
     border-radius: 4px;
-    padding: .3rem .7rem;
+    padding: 0.3rem 0.7rem;
   }
 }
 </style>

@@ -1,34 +1,34 @@
-import { extend, ValidationProvider } from 'vee-validate'
-import * as rules from 'vee-validate/dist/rules'
+import { extend, ValidationProvider } from 'vee-validate';
+import * as rules from 'vee-validate/dist/rules';
 
 // install rules and localization
 Object.keys(rules).forEach((rule) => {
-  // eslint-disable-next-line import/namespace
-  extend(rule, rules[rule])
-})
+  extend(rule, rules[rule]);
+});
 
 // Add a rule.
 extend('required', {
   ...rules.required,
-  message: 'To pole jest wymagane'
-})
+  message: 'To pole jest wymagane',
+});
 extend('email', {
   ...rules.email,
-  message: 'Wpisz poprawny adres email'
-})
+  message: 'Wpisz poprawny adres email',
+});
 extend('min', {
   ...rules.min,
   message: (value, args) => {
-    return `To pole musi zawierać min. ${args.length} znaków`
-  }
-})
+    return `To pole musi zawierać min. ${args.length} znaków`;
+  },
+});
 extend('max', {
   ...rules.max,
-  message: (value, args) => `To pole nie może być większe niż ${args.length} znaków`
-})
+  message: (value, args) =>
+    `To pole nie może być większe niż ${args.length} znaków`,
+});
 
 export default {
   components: {
-    ValidationProvider
-  }
-}
+    ValidationProvider,
+  },
+};

@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <h1 class="title">
-      Nie znaleziono takiej strony.
-    </h1>
-
-    <nuxt-link class="link" to="/">
+    <h1 class="title">Nie znaleziono takiej strony.</h1>
+    <nuxt-link
+      class="link"
+      to="/"
+    >
       Powrót do strony głównej
     </nuxt-link>
   </div>
@@ -12,8 +12,8 @@
 
 <script>
 export default {
-  name: 'Error'
-}
+  name: 'Error',
+};
 </script>
 
 <style scoped lang="scss">
@@ -35,13 +35,12 @@ export default {
   text-decoration: none;
   border: 2px solid var(--primary-color);
   border-radius: 4px;
-  padding: .7rem 1.4rem;
+  padding: 0.7rem 1.4rem;
   font-weight: bold;
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
   &:hover {
     background-color: var(--white-color);
     color: var(--primary-color) !important;
   }
 }
-
 </style>

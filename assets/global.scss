@@ -1,11 +1,11 @@
-@import "assets/_typography.scss";
+@import 'assets/_typography.scss';
 
 // fonts
 :root {
-  --header-font: "Raleway", sans-serif;
-  --body-font: "Open Sans", sans-serif;
+  --header-font: 'Raleway', sans-serif;
+  --body-font: 'Open Sans', sans-serif;
   --primary-color: #fcc150;
-  --primary-color-rgba: rgba(252,193,80,.5);
+  --primary-color-rgba: rgba(252, 193, 80, 0.5);
   --secondary-color: #0095e1;
   --tertiary-color: #007dbe;
   --error-color: #e31e25;
