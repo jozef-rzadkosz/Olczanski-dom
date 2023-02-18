@@ -1,10 +1,10 @@
 <template>
-  <section id="galeria" class="gallery">
+  <section
+    id="galeria"
+    class="gallery"
+  >
     <div class="container">
-      <h2 class="gallery__title heading-2">
-        Galeria
-      </h2>
-
+      <h2 class="gallery__title heading-2">Galeria</h2>
       <div class="gallery__items">
         <div
           v-for="(image, i) in images"
@@ -16,11 +16,11 @@
             :src="image.url"
             :alt="image.responsiveImage.alt"
             @click="index = i"
-          >
+          />
         </div>
       </div>
       <CoolLightBox
-        :items="images.map(el => el.responsiveImage.src)"
+        :items="images.map((el) => el.responsiveImage.src)"
         :index="index"
         @close="index = null"
       />
@@ -29,8 +29,9 @@
 </template>
 
 <script>
-import CoolLightBox from 'vue-cool-lightbox'
-import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
+import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css';
+
+import CoolLightBox from 'vue-cool-lightbox';
 
 export default {
   name: 'Gallery',
@@ -38,15 +39,15 @@ export default {
   props: {
     images: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
-  data () {
+  data() {
     return {
-      index: null
-    }
-  }
-}
+      index: null,
+    };
+  },
+};
 </script>
 
 <style scoped lang="sass">

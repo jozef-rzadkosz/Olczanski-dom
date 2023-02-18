@@ -1,5 +1,8 @@
 <template>
-  <button :class="`btn btn--${size}`" v-bind="$attrs">
+  <button
+    :class="`btn btn--${size}`"
+    v-bind="$attrs"
+  >
     <slot />
   </button>
 </template>
@@ -10,10 +13,10 @@ export default {
   props: {
     size: {
       type: String,
-      default: 'large'
-    }
-  }
-}
+      default: 'large',
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">

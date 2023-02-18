@@ -7,32 +7,65 @@
         "
         @click="isOpen = false"
       />
-      <svg class="nav__mobile-btn" @click="isOpen = true">
+      <svg
+        class="nav__mobile-btn"
+        @click="isOpen = true"
+      >
         <use xlink:href="/sprite.svg#icon-menu" />
       </svg>
       <ul :class="isOpen ? 'nav__list nav__list--active' : 'nav__list'">
-        <li class="nav__item" @click="isOpen = false">
-          <a class="nav__link" href="#witamy">
+        <li
+          class="nav__item"
+          @click="isOpen = false"
+        >
+          <a
+            class="nav__link"
+            href="#witamy"
+          >
             Strona główna
           </a>
         </li>
-        <li class="nav__item" @click="isOpen = false">
-          <a class="nav__link" href="#o-nas">
+        <li
+          class="nav__item"
+          @click="isOpen = false"
+        >
+          <a
+            class="nav__link"
+            href="#o-nas"
+          >
             O nas
           </a>
         </li>
-        <li class="nav__item" @click="isOpen = false">
-          <a class="nav__link" href="#na-zywo">
+        <li
+          class="nav__item"
+          @click="isOpen = false"
+        >
+          <a
+            class="nav__link"
+            href="#na-zywo"
+          >
             Na żywo
           </a>
         </li>
-        <li class="nav__item" @click="isOpen = false">
-          <a class="nav__link" href="#galeria">
+        <li
+          class="nav__item"
+          @click="isOpen = false"
+        >
+          <a
+            class="nav__link"
+            href="#galeria"
+          >
             Galeria
           </a>
         </li>
-        <li class="nav__item" @click="isOpen = false">
-          <a class="nav__link" href="#kontakt">
+        <li
+          class="nav__item"
+          @click="isOpen = false"
+        >
+          <a
+            class="nav__link"
+            href="#kontakt"
+          >
             Kontakt
           </a>
         </li>
@@ -44,12 +77,12 @@
 <script>
 export default {
   name: 'Navigation',
-  data () {
+  data() {
     return {
-      isOpen: false
-    }
-  }
-}
+      isOpen: false,
+    };
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -73,7 +106,7 @@ export default {
       color: var(--primary-color);
     }
     @media only screen and (max-width: bp.$md) {
-      color: var(--font-color)
+      color: var(--font-color);
     }
   }
   &__list {
@@ -106,7 +139,7 @@ export default {
     width: 3rem;
     height: 3rem;
     fill: var(--white-color);
-    filter: drop-shadow(0 1px 1px rgba(0,0,0,1));
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 1));
     z-index: 1;
     @media only screen and (max-width: bp.$md) {
       position: fixed;

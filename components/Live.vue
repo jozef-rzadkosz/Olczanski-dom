@@ -1,24 +1,21 @@
 <template>
-  <section id="na-zywo" class="live">
+  <section
+    id="na-zywo"
+    class="live"
+  >
     <div class="container">
-      <h2 class="live__title heading-2">
-        Podgląd na żywo
-      </h2>
+      <h2 class="live__title heading-2">Podgląd na żywo</h2>
 
       <div class="live__cameras">
         <div class="live__camera">
-          <h3 class="live__camera-title heading-4">
-            Kasprowy Wierch
-          </h3>
+          <h3 class="live__camera-title heading-4">Kasprowy Wierch</h3>
           <iframe
             src="https://imageserver.webcamera.pl/umiesc/kasprowy-wierch"
             class="live__iframe"
           />
         </div>
         <div class="live__camera">
-          <h3 class="live__camera-title heading-4">
-            Krupówki
-          </h3>
+          <h3 class="live__camera-title heading-4">Krupówki</h3>
           <iframe
             src="https://imageserver.webcamera.pl/umiesc/krupowkidolne"
             class="live__iframe"
@@ -26,9 +23,7 @@
         </div>
       </div>
 
-      <h2 class="live__title live__subtitle heading-2">
-        Pogoda
-      </h2>
+      <h2 class="live__title live__subtitle heading-2">Pogoda</h2>
       <div class="live__weather">
         <div class="live__left">
           <h3 class="live__weather-title heading-4">
@@ -37,14 +32,16 @@
           <h3 class="live__weather-title heading-4">
             {{ Math.round(weather.main.temp - 274.15) }} &#176; C
           </h3>
-          <img v-if="weather.weather" :src="`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`" alt="">
+          <img
+            v-if="weather.weather"
+            :src="`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`"
+            alt=""
+          />
           <p>{{ weather.weather[0].description }}</p>
         </div>
         <div class="live__right">
           <p>Wilgotność powietrza: {{ weather.main.humidity }}%</p>
-          <p>
-            Ciśnienie atmosferyczne: {{ weather.main.pressure }} hPa
-          </p>
+          <p>Ciśnienie atmosferyczne: {{ weather.main.pressure }} hPa</p>
           <p>Zachmurzenie: {{ weather.clouds.all }}%</p>
           <p>Widoczność: {{ weather.visibility }}m</p>
         </div>
@@ -56,24 +53,24 @@
 <script>
 export default {
   name: 'Live',
-  data () {
+  data() {
     return {
       weather: {
         main: {},
         clouds: {},
-        weather: [{ description: '', icon: '04n' }]
-      }
-    }
+        weather: [{ description: '', icon: '04n' }],
+      },
+    };
   },
-  async mounted () {
-    await fetch('https://freestyle09.usermd.net/olczanski-dom/weather')
-      .then(resp => resp.json())
-      .then((data) => {
-        this.weather = data
+  mounted() {
+    this.$axios
+      .get('/weather')
+      .then(({ data }) => {
+        this.weather = data;
       })
-      .catch(err => new Error(err))
-  }
-}
+      .catch((err) => console.error(err));
+  },
+};
 </script>
 
 <style scoped lang="sass">
@@ -125,5 +122,4 @@ export default {
   &__right
     background-color: var(--tertiary-color)
     grid-area: right
-
 </style>

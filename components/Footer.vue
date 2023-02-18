@@ -1,13 +1,19 @@
 <template>
-  <footer id="kontakt" class="footer">
+  <footer
+    id="kontakt"
+    class="footer"
+  >
     <div class="footer__background">
-      <img class="footer__image" :src="src" :alt="alt" :srcSet="webpSrcSet">
+      <img
+        class="footer__image"
+        :src="src"
+        :alt="alt"
+        :srcSet="webpSrcSet"
+      />
     </div>
     <div class="footer__filter" />
     <div class="container">
-      <h2 class="footer__title heading-2">
-        Kontakt
-      </h2>
+      <h2 class="footer__title heading-2">Kontakt</h2>
       <div class="footer__content">
         <ValidationObserver
           ref="form"
@@ -21,7 +27,10 @@
           >
             {{ message.text }}
           </div>
-          <form class="footer__form" @submit.prevent="handleSubmit(onSubmit)">
+          <form
+            class="footer__form"
+            @submit.prevent="handleSubmit(onSubmit)"
+          >
             <Input
               v-model="form.fullName"
               name="firstName"
@@ -53,7 +62,7 @@
               type="submit"
               :disabled="failed && invalid"
             >
-              {{ isSubmitting ? "Wysyłanie..." : "Wyślij" }}
+              {{ isSubmitting ? 'Wysyłanie...' : 'Wyślij' }}
             </Button>
           </form>
         </ValidationObserver>
@@ -68,17 +77,35 @@
         <p>Copyright {{ new Date().getFullYear() }} &copy; | Olczański Dom</p>
         <div class="footer__info">
           <p>Znajdź nas na:</p>
-          <a target="_blank" href="http://www.booking.com/Share-D2gu71">
-            <img src="/booking.png" class="footer__icon" alt="">
+          <a
+            target="_blank"
+            href="http://www.booking.com/Share-D2gu71"
+          >
+            <img
+              src="/booking.png"
+              class="footer__icon"
+              alt=""
+            />
           </a>
           <a
             target="_blank"
             href="https://www.google.com/search?source=hp&ei=FPJSXMj_HtHMwAKt3IvYCQ&q=olcza%C5%84ski+dom&btnK=Szukaj+w+Google&oq=olcza%C5%84ski+dom&gs_l=psy-ab.3..35i39j0i22i30.164.2211..2377...2.0..1.214.1786.0j13j1......0....1..gws-wiz.....0..0i131j0i67j0i10j0.w4iTbGyhOds#btnK=Szukaj%20w%20Google"
           >
-            <img src="/Google_plus_icon.svg" class="footer__icon" alt="">
+            <img
+              src="/Google_plus_icon.svg"
+              class="footer__icon"
+              alt=""
+            />
           </a>
-          <a target="_blank" href="https://www.facebook.com/olczanskidom/">
-            <img src="/facebook.png" class="footer__icon" alt="">
+          <a
+            target="_blank"
+            href="https://www.facebook.com/olczanskidom/"
+          >
+            <img
+              src="/facebook.png"
+              class="footer__icon"
+              alt=""
+            />
           </a>
         </div>
       </div>
@@ -87,7 +114,7 @@
 </template>
 
 <script>
-import { ValidationObserver } from 'vee-validate'
+import { ValidationObserver } from 'vee-validate';
 
 export default {
   name: 'Footer',
@@ -95,76 +122,69 @@ export default {
     ValidationObserver,
     Button: () => import('@/components/Button'),
     Input: () => import('@/components/forms/Input'),
-    Textarea: () => import('@/components/forms/Textarea')
+    Textarea: () => import('@/components/forms/Textarea'),
   },
   props: {
     src: { type: String, default: '' },
     webpSrcSet: { type: String, default: '' },
-    alt: { type: String, default: '' }
+    alt: { type: String, default: '' },
   },
-  data () {
+  data() {
     return {
       isSubmitting: false,
       message: {
         type: '',
-        text: ''
+        text: '',
       },
       form: {
         fullName: '',
         phone: '',
         email: '',
-        message: ''
-      }
-    }
+        message: '',
+      },
+    };
   },
   methods: {
-    openDialog (type, text) {
+    openDialog(type, text) {
       this.message = {
         type,
-        text
-      }
-      this.closeDialog()
+        text,
+      };
+      this.closeDialog();
     },
-    closeDialog () {
+    closeDialog() {
       setTimeout(() => {
         this.message = {
           type: '',
-          text: ''
-        }
-      }, 5000)
+          text: '',
+        };
+      }, 5000);
     },
-    onSubmit () {
-      this.isSubmitting = true
-      fetch('https://freestyle09.usermd.net/olczanski-dom/send', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(this.form)
-      })
-        .then(resp => resp.json())
+    onSubmit() {
+      this.isSubmitting = true;
+      this.$axios
+        .post('/contact', this.form)
         .then(() => {
-          this.isSubmitting = false
+          this.isSubmitting = false;
           this.form = {
             fullName: '',
             email: '',
             phone: '',
-            message: ''
-          }
-          this.$refs.form.reset()
-          this.openDialog('success', 'Wiadomość została wysłana pomyślnie!')
+            message: '',
+          };
+          this.$refs.form.reset();
+          this.openDialog('success', 'Wiadomość została wysłana pomyślnie!');
         })
         .catch(() => {
-          this.isSubmitting = false
+          this.isSubmitting = false;
           this.openDialog(
             'failed',
-            'Coś poszło nie tak spróbuj ponownie później.'
-          )
-        })
-    }
-  }
-}
+            'Coś poszło nie tak spróbuj ponownie później.',
+          );
+        });
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">

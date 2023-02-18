@@ -1,11 +1,16 @@
 <template>
-  <section id="o-nas" class="about">
+  <section
+    id="o-nas"
+    class="about"
+  >
     <div class="container">
-      <h2 class="about__title heading-2">
-        O nas
-      </h2>
+      <h2 class="about__title heading-2">O nas</h2>
       <div class="about__items">
-        <div v-for="about in allAbouts" :key="about.id" class="about__item">
+        <div
+          v-for="about in allAbouts"
+          :key="about.id"
+          class="about__item"
+        >
           <svg class="about__icon">
             <use :xlink:href="`/sprite.svg#icon-${about.iconPath}`" />
           </svg>
@@ -24,10 +29,10 @@ export default {
   props: {
     allAbouts: {
       type: Array,
-      default: () => []
-    }
-  }
-}
+      default: () => [],
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">

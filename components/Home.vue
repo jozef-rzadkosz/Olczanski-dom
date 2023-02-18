@@ -1,16 +1,22 @@
 <template>
-  <section id="witamy" class="home">
+  <section
+    id="witamy"
+    class="home"
+  >
     <div class="container">
       <h2 class="home__title heading-2">
         {{ home.title }}
       </h2>
-      <div class="home__description" v-html="sanitizeText(home.description)" />
+      <div
+        class="home__description"
+        v-html="sanitizeText(home.description)"
+      />
     </div>
   </section>
 </template>
 
 <script>
-import sanitizeHtml from 'sanitize-html'
+import sanitizeHtml from 'sanitize-html';
 
 export default {
   props: {
@@ -18,17 +24,17 @@ export default {
       type: Object,
       default: () => ({
         title: '',
-        description: ''
+        description: '',
       }),
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
-    sanitizeText () {
-      return text => sanitizeHtml(text)
-    }
-  }
-}
+    sanitizeText() {
+      return (text) => sanitizeHtml(text);
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -37,7 +43,8 @@ export default {
   &__title {
     margin-bottom: 2rem;
   }
-  &__title, &__description {
+  &__title,
+  &__description {
     text-align: center;
   }
 }
